@@ -1,0 +1,1161 @@
+{
+  "header" : {
+    "id" : "STMT.ENT.BOOK",
+    "dsfApiType" : "ENQUIRY",
+    "dsfApiComponent" : "t24data",
+    "metadata" : {
+      "installed" : "NO",
+      "release" : "R24"
+    },
+    "ttag" : {
+      "t24" : {
+        "inheritIncludeDetails" : "LENDMS*RETACC*RETLEN*RTACMS*SSRETL*TSBNPL*VAMSMS",
+        "inheritExcludeDetails" : "ENTPRI"
+      }
+    }
+  },
+  "body" : {
+    "ENQUIRY.NAME" : [ {
+      "ENQUIRY.NAME" : "DRILL.DOWN",
+      "LABEL.FIELD" : "VALDESC 54",
+      "SEL.CRIT" : [ {
+        "SEL.CRIT" : "FIN.NET.ID.FORM"
+      }, {
+        "SEL.CRIT" : "CURRENT.CompanyID>PP.COMP.POP"
+      }, {
+        "SEL.CRIT" : "CURRENT.FTNumber>PP.TRANS.REF.POP"
+      } ],
+      "NXT.DESC" : [ {
+        "NXT.DESC" : "Transaction Detail[view.gif"
+      } ]
+    } ],
+    "ATTRIBUTES" : [ {
+      "ATTRIBUTES" : "ZERORECORDDISPLAY"
+    }, {
+      "ATTRIBUTES" : "NO.SELECTION"
+    } ],
+    "OPEN.BRACKET" : [ {
+      "REQUIRED.SEL" : "Y",
+      "REL.NEXT.FIELD" : "AND",
+      "SEL.LABEL" : [ {
+        "SEL.LABEL" : "Account"
+      } ],
+      "SELECTION.FLDS" : "ACCT.ID",
+      "SEL.FLD.OPER" : "EQ"
+    }, {
+      "REL.NEXT.FIELD" : "AND",
+      "SEL.LABEL" : [ {
+        "SEL.LABEL" : "Booking Date"
+      } ],
+      "SELECTION.FLDS" : "BOOKING.DATE",
+      "SEL.FLD.OPER" : "EQ LT LE GT GE RG"
+    }, {
+      "REL.NEXT.FIELD" : "AND",
+      "SEL.LABEL" : [ {
+        "SEL.LABEL" : "Processing Date"
+      } ],
+      "SELECTION.FLDS" : "PROCESSING.DATE",
+      "SEL.FLD.OPER" : "EQ LT LE GT GE RG"
+    }, {
+      "REL.NEXT.FIELD" : "AND",
+      "SEL.LABEL" : [ {
+        "SEL.LABEL" : "Value Date"
+      } ],
+      "SELECTION.FLDS" : "VALUE.DATE",
+      "SEL.FLD.OPER" : "EQ LT LE GT GE RG"
+    }, {
+      "REL.NEXT.FIELD" : "AND",
+      "SEL.LABEL" : [ {
+        "SEL.LABEL" : "Description"
+      } ],
+      "SELECTION.FLDS" : "SHOW.NARRATIVE"
+    }, {
+      "REL.NEXT.FIELD" : "AND",
+      "SEL.LABEL" : [ {
+        "SEL.LABEL" : "Reversal Marker"
+      } ],
+      "SELECTION.FLDS" : "SHOW.REVERSAL",
+      "SEL.FLD.OPER" : "EQ"
+    }, {
+      "REL.NEXT.FIELD" : "AND",
+      "SEL.LABEL" : [ {
+        "SEL.LABEL" : "Include Sub Acct"
+      } ],
+      "SELECTION.FLDS" : "INCL.SUB.ACCT",
+      "SEL.FLD.OPER" : "EQ"
+    }, {
+      "REL.NEXT.FIELD" : "AND",
+      "SEL.LABEL" : [ {
+        "SEL.LABEL" : "Appl Drilldown"
+      } ],
+      "SELECTION.FLDS" : "APPL.DRILLDOWN",
+      "SEL.FLD.OPER" : "EQ"
+    }, {
+      "REL.NEXT.FIELD" : "AND",
+      "SEL.LABEL" : [ {
+        "SEL.LABEL" : "NO.OF.ENTRIES"
+      } ],
+      "SELECTION.FLDS" : "NO.OF.ENTRIES",
+      "SEL.FLD.OPER" : "EQ"
+    }, {
+      "SEL.LABEL" : [ {
+        "SEL.LABEL" : "SKIP.TOKEN"
+      } ],
+      "SELECTION.FLDS" : "SKIP.TOKEN",
+      "SEL.FLD.OPER" : "EQ"
+    } ],
+    "PAGE.SIZE" : "6,20",
+    "FIELD.NAME" : [ {
+      "OPERATION" : [ {
+        "OPERATION" : "\"\""
+      } ],
+      "FIELD.NAME" : "NULLVAR",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"Account Statement\""
+      } ],
+      "FIELD.NAME" : "HDR.LINE1.1",
+      "COLUMN" : "1,0",
+      "FIELD.DISP.TYPE" : "CLASS-ENQ.H.TITLE",
+      "DISPLAY.BREAK" : "PAGE",
+      "SECTION" : "HEADER"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"Account :\""
+      } ],
+      "FIELD.NAME" : "HDR.LINE2.1",
+      "COLUMN" : "1,1",
+      "FIELD.DISP.TYPE" : "CLASS-ENQ.ID.LABEL",
+      "DISPLAY.BREAK" : "PAGE",
+      "SECTION" : "HEADER"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"Customer :\""
+      } ],
+      "FIELD.NAME" : "HDR.LINE2.2",
+      "COLUMN" : "1,2",
+      "FIELD.DISP.TYPE" : "CLASS-ENQ.ID.LABEL",
+      "DISPLAY.BREAK" : "PAGE",
+      "SECTION" : "HEADER"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"Currency :\""
+      } ],
+      "FIELD.NAME" : "HDR.LINE.3",
+      "COLUMN" : "1,3",
+      "FIELD.DISP.TYPE" : "CLASS-ENQ.ID.LABEL",
+      "DISPLAY.BREAK" : "PAGE",
+      "SECTION" : "HEADER"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "@ID"
+      } ],
+      "FIELD.NAME" : "@ID",
+      "LENGTH.MASK" : "90L",
+      "SINGLE.MULTI" : "S"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "S ACCT.ID"
+      } ],
+      "FIELD.NAME" : "ACC",
+      "LENGTH.MASK" : "19L",
+      "SINGLE.MULTI" : "S",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F ACC"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "L ACCOUNT,ORIGINAL.ACCT"
+      } ],
+      "FIELD.NAME" : "ORIG.ACCT",
+      "COMMENTS" : [ {
+        "COMMENTS" : "The original account number"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F ACC"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "L ACCOUNT,AUTO.PAY.ACCT"
+      } ],
+      "FIELD.NAME" : "AUTO.PAY.ACCT",
+      "COMMENTS" : [ {
+        "COMMENTS" : "Linked auto pay acct"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "B C ACC"
+      } ],
+      "FIELD.NAME" : "B.ACC"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F ACC"
+      } ],
+      "FIELD.NAME" : "D.ACC",
+      "LENGTH.MASK" : "19L",
+      "COLUMN" : "10,1",
+      "FIELD.DISP.TYPE" : "CLASS-ENQ.H.DATA",
+      "DISPLAY.BREAK" : "PAGE",
+      "SECTION" : "HEADER"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "ACCOUNT.NUMBER"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "@ E.ACC.HIS.CCY"
+      } ],
+      "FIELD.NAME" : "CCY.CUS",
+      "LENGTH.MASK" : "19L",
+      "SINGLE.MULTI" : "S"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F CCY.CUS"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "F \\,2,0"
+      } ],
+      "FIELD.NAME" : "CUS",
+      "LENGTH.MASK" : "10L",
+      "COLUMN" : "10,2",
+      "FIELD.DISP.TYPE" : "CLASS-ENQ.H.DATA",
+      "TYPE" : "LANGUAGE",
+      "DISPLAY.BREAK" : "PAGE",
+      "SECTION" : "HEADER"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F CCY.CUS"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "F \\,2,0"
+      } ],
+      "FIELD.NAME" : "CUST",
+      "FIELD.DISP.TYPE" : "CLASS-ENQ.H.DATA",
+      "SECTION" : "HEADER"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F CUST"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "L CUSTOMER,SHORT.NAME"
+      } ],
+      "FIELD.NAME" : "CUSNM",
+      "TYPE" : "LANGUAGE",
+      "DISPLAY.BREAK" : "PAGE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F ACC"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "L ACCOUNT,SHORT.TITLE"
+      } ],
+      "FIELD.NAME" : "ACCSNM",
+      "TYPE" : "LANGUAGE",
+      "DISPLAY.BREAK" : "PAGE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\" \""
+      } ],
+      "FIELD.NAME" : "SPACE",
+      "COLUMN" : "35,2",
+      "DISPLAY.BREAK" : "PAGE",
+      "SECTION" : "HEADER"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF CUST NE NULLVAR CUSNM ACCSNM"
+      } ],
+      "FIELD.NAME" : "PRTNM",
+      "LENGTH.MASK" : "35L",
+      "COLUMN" : "36,2",
+      "FIELD.DISP.TYPE" : "CLASS-ENQ.H.DATA",
+      "DISPLAY.BREAK" : "PAGE",
+      "SECTION" : "HEADER"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F ACC"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "L ACCOUNT,CURRENCY"
+      } ],
+      "FIELD.NAME" : "ACC.CURRENCY"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "CURRENCY"
+      } ],
+      "FIELD.NAME" : "CURRENCY",
+      "LENGTH.MASK" : "3L",
+      "SINGLE.MULTI" : "S",
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "Ccy"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF CURRENCY NE NULLVAR CURRENCY ACC.CURRENCY"
+      } ],
+      "FIELD.NAME" : "CCY",
+      "LENGTH.MASK" : "3L",
+      "SINGLE.MULTI" : "S",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F CCY"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "U FIXCCY,CCY"
+      } ],
+      "FIELD.NAME" : "FIX.CCY",
+      "COMMENTS" : [ {
+        "COMMENTS" : "The fixed currency"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F CCY"
+      } ],
+      "FIELD.NAME" : "D.CCY"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"\""
+      } ],
+      "FIELD.NAME" : "NULL"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "COMPANY.CODE"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "L COMPANY,LOCAL.CURRENCY"
+      } ],
+      "FIELD.NAME" : "COMP.CCY",
+      "LENGTH.MASK" : "11L",
+      "SINGLE.MULTI" : "S"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "AMOUNT.LCY"
+      } ],
+      "FIELD.NAME" : "AMOUNT.LCY",
+      "LENGTH.MASK" : "19R",
+      "SINGLE.MULTI" : "S",
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "Amount Lcy"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "AMOUNT.FCY"
+      } ],
+      "FIELD.NAME" : "AMOUNT.FCY",
+      "LENGTH.MASK" : "19R",
+      "SINGLE.MULTI" : "S",
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "Amount Fcy"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF CCY NE NULL CCY COMP.CCY"
+      } ],
+      "FIELD.NAME" : "CCY1"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F CCY1"
+      } ],
+      "FIELD.NAME" : "DIS.CCY",
+      "DISPLAY.BREAK" : "PAGE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F CCY.CUS"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "F \\,1,0"
+      } ],
+      "FIELD.NAME" : "ACCT.CCY",
+      "LENGTH.MASK" : "3L",
+      "SINGLE.MULTI" : "S",
+      "FIELD.DISP.TYPE" : "CLASS-ENQ.H.DATA",
+      "SECTION" : "HEADER"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF D.CCY EQ NULL ACCT.CCY D.CCY"
+      } ],
+      "FIELD.NAME" : "DISP.CCY",
+      "LENGTH.MASK" : "3L",
+      "SINGLE.MULTI" : "S",
+      "FIELD.DISP.TYPE" : "CLASS-ENQ.H.DATA"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F DISP.CCY"
+      } ],
+      "FIELD.NAME" : "CHK.CCY",
+      "COLUMN" : "10,3",
+      "DISPLAY.BREAK" : "PAGE",
+      "SECTION" : "HEADER"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF CCY EQ NULL AMOUNT.LCY AMOUNT.FCY"
+      } ],
+      "FIELD.NAME" : "AMT.1"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F ACCT.CCY"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "E 1,3"
+      } ],
+      "FIELD.NAME" : "CHECK1"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F COMP.CCY"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "E 1,3"
+      } ],
+      "FIELD.NAME" : "CHECK2"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF CHECK2 EQ CHECK1 AMOUNT.LCY AMOUNT.FCY"
+      } ],
+      "FIELD.NAME" : "AMOUNT",
+      "TYPE" : "CCY CCY1"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "!LANGUAGE"
+      } ],
+      "FIELD.NAME" : "LANG",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "TRANSACTION.CODE"
+      } ],
+      "FIELD.NAME" : "TCODE",
+      "LENGTH.MASK" : "5L",
+      "SINGLE.MULTI" : "S"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "VALUE.DATE"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "JULIAN"
+      }, {
+        "CONVERSION" : "O D2"
+      }, {
+        "CONVERSION" : "S --,"
+      } ],
+      "FIELD.NAME" : "CVDT",
+      "LENGTH.MASK" : "11R",
+      "SINGLE.MULTI" : "S"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F @ID"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "@ E.GET.NARRATIVE"
+      }, {
+        "CONVERSION" : "@ E.GET.SPECIAL.NARR"
+      } ],
+      "FIELD.NAME" : "DESC"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF DESC EQ @ID NULL DESC"
+      } ],
+      "FIELD.NAME" : "VALID.DESC"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"*** NO ENTRIES\""
+      } ],
+      "FIELD.NAME" : "NOREC",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"FOR PERIOD ***\""
+      } ],
+      "FIELD.NAME" : "NOREC1",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"\""
+      } ],
+      "FIELD.NAME" : "NULL.02",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\":\""
+      } ],
+      "FIELD.NAME" : "DELIM",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "THEIR.REFERENCE"
+      } ],
+      "FIELD.NAME" : "THEIR.REF",
+      "LENGTH.MASK" : "16L",
+      "SINGLE.MULTI" : "S"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "ACCOUNT.NUMBER"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "@ E.CALC.OPEN.BALANCE"
+      } ],
+      "FIELD.NAME" : "B.AMT.BF",
+      "LENGTH.MASK" : "19L",
+      "SINGLE.MULTI" : "S",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"Balance at Period Start\""
+      } ],
+      "FIELD.NAME" : "BFWD",
+      "COLUMN" : "14,+0",
+      "FIELD.DISP.TYPE" : "CLASS-TITLE",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "BOOKING.DATE"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "JULIAN"
+      }, {
+        "CONVERSION" : "O D2"
+      }, {
+        "CONVERSION" : "S --,"
+      } ],
+      "FIELD.NAME" : "POST",
+      "LENGTH.MASK" : "9L",
+      "SINGLE.MULTI" : "S",
+      "COLUMN" : "10",
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "Book Date"
+      } ],
+      "TYPE" : "DATE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "TRANS.REFERENCE"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "@ E.THEIR.REF.CON"
+      } ],
+      "FIELD.NAME" : "REFNO",
+      "LENGTH.MASK" : "54L",
+      "SINGLE.MULTI" : "S",
+      "COLUMN" : "14",
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "Reference"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "TRANSACTION.CODE"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "L TRANSACTION,NARRATIVE"
+      } ],
+      "FIELD.NAME" : "TRANS.NARRATIVE",
+      "LENGTH.MASK" : "50L",
+      "SINGLE.MULTI" : "S",
+      "TYPE" : "LANGUAGE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF TCODE NE NULL TRANS.NARRATIVE NOREC"
+      } ],
+      "FIELD.NAME" : "PDESC",
+      "LENGTH.MASK" : "150L",
+      "COLUMN" : "34",
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "Description"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "NARRATIVE"
+      } ],
+      "FIELD.NAME" : "NARRATIVE",
+      "LENGTH.MASK" : "150L",
+      "SINGLE.MULTI" : "M",
+      "COLUMN" : "34,+1M",
+      "COMMENTS" : [ {
+        "COMMENTS" : "Stmt Entry Narrative"
+      } ],
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "Narrative"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF TCODE NE NULL CVDT NOREC1"
+      } ],
+      "FIELD.NAME" : "VALDESC",
+      "LENGTH.MASK" : "25L",
+      "COLUMN" : "48",
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "Value Date"
+      } ],
+      "TYPE" : "DATE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F AMOUNT"
+      } ],
+      "FIELD.NAME" : "AMT",
+      "SINGLE.MULTI" : "S",
+      "TYPE" : "CCY ACCT.CCY"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"0\""
+      } ],
+      "FIELD.NAME" : "ZERO"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F AMT"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "U ABS"
+      } ],
+      "FIELD.NAME" : "ABS.DR.AMT",
+      "TYPE" : "CCY ACCT.CCY"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF AMT LT ZERO ABS.DR.AMT NULL"
+      } ],
+      "FIELD.NAME" : "DR.AMOUNT"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF TCODE NE NULL DR.AMOUNT NULL"
+      } ],
+      "FIELD.NAME" : "DR.AMT",
+      "LENGTH.MASK" : "25R",
+      "COLUMN" : "60",
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "Debit"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF AMT GT ZERO AMT NULL"
+      } ],
+      "FIELD.NAME" : "CR.AMOUNT",
+      "COLUMN" : "90",
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "Credit"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF CR.AMOUNT EQ \"0\" NULL CR.AMOUNT"
+      } ],
+      "FIELD.NAME" : "CR.AMT",
+      "LENGTH.MASK" : "25R"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F B.AMT.BF"
+      } ],
+      "FIELD.NAME" : "OPENING.BALANCE",
+      "LENGTH.MASK" : "25R",
+      "COLUMN" : "100,+0",
+      "TYPE" : "CCY CCY",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C AMT + ENTRY.BALANCE"
+      } ],
+      "FIELD.NAME" : "ENTRY.BALANCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C B.AMT.BF + ENTRY.BALANCE"
+      } ],
+      "FIELD.NAME" : "RUNNING.BALANCE",
+      "TYPE" : "CCY ACCT.CCY"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"---------\""
+      } ],
+      "FIELD.NAME" : "HYPHN",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"AA\""
+      } ],
+      "FIELD.NAME" : "AA",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"PP\""
+      } ],
+      "FIELD.NAME" : "PP",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF TCODE NE NULL RUNNING.BALANCE HYPHN"
+      } ],
+      "FIELD.NAME" : "BALANCE",
+      "LENGTH.MASK" : "25R",
+      "COLUMN" : "100",
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "Closing Balance"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "SYSTEM.ID"
+      } ],
+      "FIELD.NAME" : "SYSTEM.ID",
+      "LENGTH.MASK" : "4L",
+      "SINGLE.MULTI" : "S",
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "System id"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "TRANS.REFERENCE"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "@ E.TRN.REF.CONV"
+      } ],
+      "FIELD.NAME" : "TRANS.REF",
+      "LENGTH.MASK" : "60L",
+      "SINGLE.MULTI" : "S"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "@ID"
+      } ],
+      "FIELD.NAME" : "STMT.ID",
+      "LENGTH.MASK" : "90L",
+      "SINGLE.MULTI" : "S",
+      "COMMENTS" : [ {
+        "COMMENTS" : "Stmt entry id"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F SYSTEM.ID"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "@ E.READ.EB.SYSTEM.ID"
+      } ],
+      "FIELD.NAME" : "BASE.APPL",
+      "COMMENTS" : [ {
+        "COMMENTS" : "Next level for drilldown"
+      } ]
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"NO\""
+      } ],
+      "FIELD.NAME" : "NO",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\" S \""
+      } ],
+      "FIELD.NAME" : "FUN.SEE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "S APPL.DRILLDOWN"
+      } ],
+      "FIELD.NAME" : "APPL.DRILLDOWN",
+      "LENGTH.MASK" : "3L",
+      "SINGLE.MULTI" : "S",
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "Appl Drilldown"
+      } ],
+      "TYPE" : "LANGUAGE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C SYSTEM.ID : DELIM"
+      } ],
+      "FIELD.NAME" : "NEW.SYSTEM.ID"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C NEW.SYSTEM.ID : NEXT.ID"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "@ E.CONV.APPLN"
+      } ],
+      "FIELD.NAME" : "NEW.BASE.APPL",
+      "LENGTH.MASK" : "100L"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"PS\""
+      } ],
+      "FIELD.NAME" : "PS",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F REFNO"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "F .,2,1"
+      } ],
+      "FIELD.NAME" : "PS.ID.CHK"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C BASE.APPL : FUN.SEE"
+      } ],
+      "FIELD.NAME" : "PS.ID.FIN1"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C PS.ID.FIN1 : PS.ID.CHK"
+      } ],
+      "FIELD.NAME" : "PS.ID.FIN"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F REFNO"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "F -,1,1"
+      } ],
+      "FIELD.NAME" : "NET.REF"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"NET...\""
+      } ],
+      "FIELD.NAME" : "NET.ENTRY"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"ENQ STMT.ENT.DETAIL\""
+      } ],
+      "FIELD.NAME" : "STMT.ENT.DET"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"STMT.ENTRY.ID EQ \""
+      } ],
+      "FIELD.NAME" : "NET.SEL.ID"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF NET.REF LK NET.ENTRY STMT.ID NULL"
+      } ],
+      "FIELD.NAME" : "NET.SEL.FORM"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C NET.SEL.ID : NET.SEL.FORM"
+      } ],
+      "FIELD.NAME" : "FIN.NET.ID.FORM"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"STMT.ACCT.CH\""
+      } ],
+      "FIELD.NAME" : "CH.APP"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "TRANS.REFERENCE"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "F -,2,1"
+      } ],
+      "FIELD.NAME" : "CH.REFERENCE",
+      "LENGTH.MASK" : "60L",
+      "SINGLE.MULTI" : "S"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F CH.REFERENCE"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "E 1,6"
+      } ],
+      "FIELD.NAME" : "CH.SEC"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "TRANS.REFERENCE"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "F -,1,1"
+      } ],
+      "FIELD.NAME" : "CH.REF.FIRST",
+      "LENGTH.MASK" : "60L",
+      "SINGLE.MULTI" : "S"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"-\""
+      } ],
+      "FIELD.NAME" : "CH.REF.SEP"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C CH.REF.FIRST : CH.REF.SEP"
+      } ],
+      "FIELD.NAME" : "CH.REF.VAL"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C CH.REF.VAL : CH.SEC"
+      } ],
+      "FIELD.NAME" : "CH.REF.NO"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF BASE.APPL EQ CH.APP CH.REF.NO TRANS.REF"
+      } ],
+      "FIELD.NAME" : "REF.NO"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C BASE.APPL : FUN.SEE"
+      } ],
+      "FIELD.NAME" : "Y.TRAN.ID"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"AA.ARRANGEMENT.ACTIVITY\""
+      } ],
+      "FIELD.NAME" : "AA.ID.FORM"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C AA.ID.FORM : FUN.SEE"
+      } ],
+      "FIELD.NAME" : "AA.ID.FIN1"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C AA.ID.FIN1 : REF.NO"
+      } ],
+      "FIELD.NAME" : "AA.ID.FIN"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"PP.ORDER.ENTRY,AUTH\""
+      } ],
+      "FIELD.NAME" : "PP.ID.FORM"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C PP.ID.FORM : FUN.SEE"
+      } ],
+      "FIELD.NAME" : "PP.ID.FIN1"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"111\""
+      } ],
+      "FIELD.NAME" : "PP.REFNUM"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C PP.ID.FIN1 : PP.REFNUM"
+      } ],
+      "FIELD.NAME" : "PP.ID.FIN"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C Y.TRAN.ID : REF.NO"
+      } ],
+      "FIELD.NAME" : "Y.TRAN.ID.FIN"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C STMT.ENTRY : FUN.SEE"
+      } ],
+      "FIELD.NAME" : "Y.STMT.ID"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C Y.STMT.ID : STMT.ID"
+      } ],
+      "FIELD.NAME" : "Y.STMT.ID.FIN"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F TRANS.REF"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "F -,3,1"
+      } ],
+      "FIELD.NAME" : "CASH.POOL.REF"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F TRANS.REF"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "F -,2,1"
+      } ],
+      "FIELD.NAME" : "SWEEP.REF"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"ACSW\""
+      } ],
+      "FIELD.NAME" : "ACSW"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"PO\""
+      } ],
+      "FIELD.NAME" : "PO"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"SW\""
+      } ],
+      "FIELD.NAME" : "SW"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"ACCP\""
+      } ],
+      "FIELD.NAME" : "ACCP"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF CASH.POOL.REF NE PO Y.STMT.ID.FIN Y.TRAN.ID.FIN"
+      } ],
+      "FIELD.NAME" : "CHECK.ACCP"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF SWEEP.REF NE SW Y.STMT.ID.FIN Y.TRAN.ID.FIN"
+      } ],
+      "FIELD.NAME" : "CHECK.SW.REF"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF SYSTEM.ID EQ ACSW CHECK.SW.REF Y.TRAN.ID.FIN"
+      } ],
+      "FIELD.NAME" : "CHECK.ACSW"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF SYSTEM.ID EQ ACCP CHECK.ACCP CHECK.ACSW"
+      } ],
+      "FIELD.NAME" : "Y.CHECK.TRAN.ID"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF SYSTEM.ID EQ PS PS.ID.FIN Y.CHECK.TRAN.ID"
+      } ],
+      "FIELD.NAME" : "Y.PS.ID"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF SYSTEM.ID EQ PP PP.ID.FIN Y.PS.ID"
+      } ],
+      "FIELD.NAME" : "Y.PP.ID"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF BASE.APPL EQ AA.ID.FORM AA.ID.FIN Y.PP.ID"
+      } ],
+      "FIELD.NAME" : "Y.AA.ID"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF REF.NO LK NET.ENTRY STMT.ENT.DET Y.DRILL"
+      } ],
+      "FIELD.NAME" : "NET.DET.ID"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF SYSTEM.ID EQ PP PP.COMP NULL"
+      } ],
+      "FIELD.NAME" : "PP.COMP.POP"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF SYSTEM.ID EQ PP PP.TRANS.REF NULL"
+      } ],
+      "FIELD.NAME" : "PP.TRANS.REF.POP"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "T AMT"
+      } ],
+      "FIELD.NAME" : "ENT.TOT"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"N\""
+      } ],
+      "FIELD.NAME" : "NO.02",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF BASE.APPL EQ NULL Y.STMT.ID.FIN NET.DET.ID"
+      } ],
+      "FIELD.NAME" : "APPL.NAME"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF BASE.APPL EQ NULL Y.STMT.ID.FIN Y.AA.ID"
+      } ],
+      "FIELD.NAME" : "Y.DRILL"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF APPL.DRILLDOWN EQ NO Y.STMT.ID.FIN NET.DET.ID"
+      } ],
+      "FIELD.NAME" : "NEXT.APPL"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF APPL.DRILLDOWN EQ NO Y.STMT.ID.FIN NET.DET.ID"
+      } ],
+      "FIELD.NAME" : "DRILL.DOWN",
+      "LENGTH.MASK" : "200L"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"STMT.ENTRY\""
+      } ],
+      "FIELD.NAME" : "STMT.ENTRY",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "TRANS.REFERENCE"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "@ E.CONV.PP.COMPANY"
+      } ],
+      "FIELD.NAME" : "PP.COMP",
+      "LENGTH.MASK" : "60L",
+      "SINGLE.MULTI" : "S"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "TRANS.REFERENCE"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "F \\,1,1"
+      } ],
+      "FIELD.NAME" : "PP.TRANS.REF",
+      "LENGTH.MASK" : "60L",
+      "SINGLE.MULTI" : "S"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"0\""
+      } ],
+      "FIELD.NAME" : "ZERO.02",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "IF TOTAL EQ ZERO TOTAL B.AMT.BF"
+      } ],
+      "FIELD.NAME" : "ZER1",
+      "DISPLAY.BREAK" : "ONCE"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "C ENT.TOT + B.AMT.BF"
+      } ],
+      "FIELD.NAME" : "END.TOT"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"Balance at Period End\""
+      } ],
+      "FIELD.NAME" : "D.BAL",
+      "COLUMN" : "14,+1",
+      "FIELD.DISP.TYPE" : "CLASS-TITLE",
+      "DISPLAY.BREAK" : "B.ACC"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "F RUNNING.BALANCE"
+      } ],
+      "FIELD.NAME" : "TOTAL",
+      "COLUMN" : "100,+1",
+      "FIELD.LBL" : [ {
+        "FIELD.LBL" : "Closing Balance"
+      } ],
+      "TYPE" : "CCY ACCT.CCY",
+      "DISPLAY.BREAK" : "B.ACC"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"\""
+      } ],
+      "FIELD.NAME" : "NULL.03"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"Either Selection incorrect or No entries for theperiod\""
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "@ ENQ.ERR.DISP"
+      } ],
+      "FIELD.NAME" : "ZERORECORDS",
+      "COLUMN" : "1",
+      "FIELD.DISP.TYPE" : "CLASS-ENQ.NORECS",
+      "DISPLAY.BREAK" : "NONE",
+      "SECTION" : "HEADER"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "\"Next Entry Ref :\""
+      } ],
+      "FIELD.NAME" : "FOOTER.1",
+      "COLUMN" : "15,+1",
+      "FIELD.DISP.TYPE" : "CLASS-ENQ.ID.LABEL",
+      "DISPLAY.BREAK" : "PAGE",
+      "SECTION" : "FOOTER"
+    }, {
+      "OPERATION" : [ {
+        "OPERATION" : "S SKIP.TOKEN"
+      } ],
+      "CONVERSION" : [ {
+        "CONVERSION" : "@ E.STMT.PASS.NEXT.ENTRY"
+      } ],
+      "FIELD.NAME" : "SKIP.TOKEN",
+      "LENGTH.MASK" : "100L",
+      "SINGLE.MULTI" : "S",
+      "COLUMN" : "25,+1",
+      "FIELD.DISP.TYPE" : "CLASS-ENQ.H.DATA",
+      "DISPLAY.BREAK" : "PAGE",
+      "SECTION" : "FOOTER"
+    } ],
+    "BUILD.ROUTINE" : [ {
+      "BUILD.ROUTINE" : "E.MB.STMT.BOOK.BUILD"
+    } ],
+    "SHORT.DESC" : [ {
+      "SHORT.DESC" : "Account Statement"
+    } ],
+    "FILE.NAME" : "STMT.ENTRY",
+    "FIXED.SORT" : [ {
+      "FIXED.SORT" : "DATE.TIME"
+    } ]
+  }
+}
