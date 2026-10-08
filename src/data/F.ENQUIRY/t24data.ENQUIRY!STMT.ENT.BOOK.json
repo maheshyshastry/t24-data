@@ -1151,7 +1151,7 @@
       "BUILD.ROUTINE" : "E.MB.STMT.BOOK.BUILD"
     } ],
     "SHORT.DESC" : [ {
-      "SHORT.DESC" : "Account Statement"
+      "SHORT.DESC" : "Account Statement Book"
     } ],
     "FILE.NAME" : "STMT.ENTRY",
     "FIXED.SORT" : [ {
